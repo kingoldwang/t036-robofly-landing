@@ -414,6 +414,62 @@
       font-size: 0.95rem;
     }
 
+    .demo-section {
+      background: linear-gradient(180deg, #f7fbff, #ffffff);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 16px 44px rgba(0, 70, 170, 0.08);
+    }
+
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+      background: #eaf4ff;
+    }
+
+    .video-card video.live-flight-video {
+      object-fit: contain;
+      object-position: center top;
+    }
+
+    .video-card-content {
+      padding: 24px;
+    }
+
+    .video-card h3 {
+      color: var(--dark);
+      font-size: 1.22rem;
+      letter-spacing: -0.035em;
+    }
+
+    .video-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .video-card .text-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
     .compare-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -616,7 +672,7 @@
       text-align: center;
       background:
         linear-gradient(145deg, rgba(0, 24, 79, 0.95), rgba(0, 90, 214, 0.88)),
-        url("assets/robofly-mockup.png") center / cover;
+        url("assets/robofly-mockup-web.png") center / cover;
       box-shadow: var(--shadow);
     }
 
@@ -687,6 +743,7 @@
 
       .feature-grid,
       .stats,
+      .video-grid,
       .team-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -733,6 +790,7 @@
 
       .feature-grid,
       .stats,
+      .video-grid,
       .team-grid {
         grid-template-columns: 1fr;
       }
@@ -786,7 +844,7 @@
         <a href="#app">App</a>
         <a href="#market">Market</a>
         <a href="#team">Team</a>
-        <a href="http://localhost:8080/video">Live Video</a>
+        <a href="#demo-videos">Demo Videos</a>
         <a href="#contact" class="nav-cta">Invest / Buy</a>
       </nav>
 
@@ -814,7 +872,7 @@
 
           <div class="hero-actions">
             <a href="#product" class="btn btn-primary">Explore Robofly</a>
-            <a href="http://localhost:8080/video" class="btn btn-secondary">Open Live Video</a>
+            <a href="#demo-videos" class="btn btn-secondary">Watch Demo Videos</a>
           </div>
         </div>
 
@@ -823,7 +881,7 @@
 
           <img
             class="hero-product"
-            src="assets/robofly-mockup.png"
+            src="assets/robofly-mockup-web.png"
             alt="Robofly biomimetic butterfly drone"
           />
 
@@ -977,6 +1035,71 @@
       </div>
     </section>
 
+    <section class="demo-section" id="demo-videos">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Demonstration Videos</div>
+
+          <h2>Flight and camera system <span>in action.</span></h2>
+
+          <p>
+            Watch Robofly's live flight, camera component build and facial
+            recognition workflow through three booth-ready demonstration clips.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <video class="live-flight-video" controls playsinline preload="metadata" poster="assets/robofly-live-flight-poster.jpg">
+              <source src="assets/robofly-live-flight.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="video-card-content">
+              <h3>Live Flight Video</h3>
+              <p>
+                A focused view of Robofly lifting, moving and presenting its
+                butterfly-inspired motion.
+              </p>
+              <a href="assets/robofly-live-flight.mp4" class="text-link">Open video</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/camera-component-video-poster.jpg">
+              <source src="assets/camera-component-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="video-card-content">
+              <h3>Camera Component Video</h3>
+              <p>
+                A closer look at the physical camera component and how it fits
+                into the Robofly demonstration system.
+              </p>
+              <a href="assets/camera-component-video.mp4" class="text-link">Open video</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/camera-facial-recognition-video-poster.jpg">
+              <source src="assets/camera-facial-recognition-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="video-card-content">
+              <h3>Camera System with Facial Recognition</h3>
+              <p>
+                The camera system running with facial recognition to show how
+                the live vision workflow supports the Robofly demo.
+              </p>
+              <a href="assets/camera-facial-recognition-video.mp4" class="text-link">Open video</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="app-section" id="app">
       <div class="container app-grid">
         <div class="panel">
@@ -992,7 +1115,7 @@
 
           <div class="qr-card">
             <img
-              src="assets/morphie-app-icon.png"
+              src="assets/qr-morphie-app.png"
               alt="QR code to download the Morphie app"
               loading="lazy"
             />
@@ -1057,7 +1180,10 @@
 
           <h2>The people behind <span>AeroMorph.</span></h2>
 
-  
+          <p>
+            Team photos can be added later. For now, this section uses clean
+            name cards to keep the website minimal and presentation-ready.
+          </p>
         </div>
 
         <div class="team-grid">
@@ -1079,7 +1205,7 @@
         <div class="cta-box">
           <img
             class="cta-logo"
-            src="assets/aeromorph-logo-circular-white.png"
+            src="assets/aeromorph-logo-circular.png"
             alt="AeroMorph circular logo"
             loading="lazy"
           />
@@ -1097,8 +1223,8 @@
               Contact AeroMorph
             </a>
 
-            <a href="http://localhost:8080/video" class="btn btn-secondary">
-              Open Live Video
+            <a href="#demo-videos" class="btn btn-secondary">
+              Watch Demo Videos
             </a>
           </div>
         </div>
